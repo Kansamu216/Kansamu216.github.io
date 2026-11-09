@@ -53,6 +53,21 @@ categories: [记录]
 
 正文里 `<!--more-->` 之前的内容会作为首页摘要。
 
-## 部署
+## 部署（GitHub Pages，已配好）
 
-生成后的 `public/` 是纯静态文件，可放到 GitHub Pages / Vercel / Netlify / 任意静态服务器。
+本博客已发布到 **https://kansamu216.github.io/**，仓库：`Kansamu216/Kansamu216.github.io`。
+
+发布方式是通用的 **gh-pages 分支**：`main` 存源码，`gh-pages` 存生成的静态文件。
+
+写完文章后，一条命令即可发布：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\deploy.ps1
+```
+
+它会自动 `hexo clean` + `hexo generate`，然后把 `public/` 推到 `gh-pages` 分支，约 1 分钟后线上生效。
+
+> 说明：本机 `gh` 的登录 token 没有 `workflow` 权限，所以没有使用 GitHub Actions，改用 gh-pages 分支发布。
+> 若以后想改成 Actions 自动部署，可在 GitHub 给 token 加上 `workflow` 权限后，新建 `.github/workflows/deploy.yml` 配置 Pages 的 Actions 构建。
+
+生成后的 `public/` 也是纯静态文件，可放到 Vercel / Netlify / 任意静态服务器。
