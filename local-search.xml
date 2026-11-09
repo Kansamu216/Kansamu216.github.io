@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>博客开张：从这里开始</title>
+    <link href="/2026/11/09/hello-world/"/>
+    <url>/2026/11/09/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>欢迎来到我的博客 🎉 这里会随手记录一些想法、折腾笔记和日常。</p><h2 id="这个博客怎么来的"><a href="#这个博客怎么来的" class="headerlink" title="这个博客怎么来的"></a>这个博客怎么来的</h2><p>用 <a href="https://hexo.io/">Hexo</a> 搭的静态博客，主题是 <a href="https://hexo.fluid-dev.com/">Fluid</a>。写 Markdown，一条命令生成静态网页，部署到哪里都很省心。</p><h2 id="写文章就三步"><a href="#写文章就三步" class="headerlink" title="写文章就三步"></a>写文章就三步</h2><ol><li><p>新建一篇文章：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;文章标题&quot;</span><br></code></pre></td></tr></table></figure></li><li><p>打开 <code>source/_posts/</code> 下生成的 <code>.md</code> 文件，用 Markdown 写正文。</p></li><li><p>本地预览（实时刷新）：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure></li></ol><h2 id="Markdown-小抄"><a href="#Markdown-小抄" class="headerlink" title="Markdown 小抄"></a>Markdown 小抄</h2><blockquote><p>这是一段引用文字，用来强调重点。</p></blockquote><table><thead><tr><th>语法</th><th>效果</th></tr></thead><tbody><tr><td><code>**粗体**</code></td><td><strong>粗体</strong></td></tr><tr><td><code>`代码`</code></td><td><code>代码</code></td></tr><tr><td><code>[链接](https://hexo.io)</code></td><td><a href="https://hexo.io/">链接</a></td></tr></tbody></table><ul><li>无序列表</li><li>支持脚注、数学公式、流程图等（Fluid 内置）</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">hello</span>(<span class="hljs-params">name</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Hi, <span class="hljs-subst">&#123;name&#125;</span>!&quot;</span>)<br></code></pre></td></tr></table></figure><p>以后就在这里慢慢更新啦。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
