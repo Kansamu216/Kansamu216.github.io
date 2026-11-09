@@ -62,7 +62,7 @@ categories: [记录]
 写完文章后，一条命令即可发布：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1
+pwsh -ExecutionPolicy Bypass -File .\deploy.ps1
 ```
 
 它会自动 `hexo clean` + `hexo generate`，然后把 `public/` 推到 `gh-pages` 分支，约 1 分钟后线上生效。

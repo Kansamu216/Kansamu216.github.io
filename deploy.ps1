@@ -1,4 +1,4 @@
-# 一键发布到 GitHub Pages（gh-pages 分支）
+﻿# 一键发布到 GitHub Pages（gh-pages 分支）
 # 用法：在 my-blog 目录下执行  powershell -ExecutionPolicy Bypass -File .\deploy.ps1
 $ErrorActionPreference = "Stop"
 $env:GIT_TERMINAL_PROMPT = "0"
@@ -32,14 +32,25 @@ try {
 
   $tok = $null
   try { $tok = (gh auth token) 2>$null } catch {}
-  if ($tok) {
-    $url = "https://Kansamu216:$tok@github.com/$repo.git"
-    git push $url gh-pages:gh-pages -f
-  } else {
+  if (-not $tok) {
     # 没有 gh token 时，使用默认 git 凭据
     git remote add origin "https://github.com/$repo.git"
-    git push origin gh-pages:gh-pages -f
   }
+
+  $ok = $false
+  for ($attempt = 1; $attempt -le 6; $attempt++) {
+    if ($tok) {
+      $url = "https://Kansamu216:$tok@github.com/$repo.git"
+      git push $url gh-pages:gh-pages -f
+    } else {
+      git push origin gh-pages:gh-pages -f
+    }
+    if ($LASTEXITCODE -eq 0) { $ok = $true; break }
+    Write-Host "推送失败（可能是网络抖动），第 $attempt 次，3 秒后重试..." -ForegroundColor Yellow
+    Start-Sleep -Seconds 3
+  }
+  if (-not $ok) { throw "推送到 GitHub 失败，请检查网络后重试" }
+
   Write-Host "==> 完成：https://kansamu216.github.io/ （约 1 分钟后生效）"
 }
 finally {
